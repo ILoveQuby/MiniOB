@@ -152,10 +152,10 @@ function build
   set -- "${BUILD_ARGS[@]}"
   case "x$1" in
     xrelease)
-      do_build "$@" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DDEBUG=OFF
+      do_build "$@" -DCMAKE_BUILD_TYPE=Release
       ;;
     xdebug)
-      do_build "$@" -DCMAKE_BUILD_TYPE=Debug -DDEBUG=ON
+      do_build "$@" -DCMAKE_BUILD_TYPE=Debug
       ;;
     *)
       BUILD_ARGS=(debug "${BUILD_ARGS[@]}")
@@ -163,6 +163,7 @@ function build
       ;;
   esac
 }
+
 
 function main
 {
